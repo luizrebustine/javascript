@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de Imagens</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        h1{
+            text-align: center;
+            font: normal 2em 'Arial';
+        }
+        div#imagem{
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            margin: 30px auto;
+            box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.281);
+        }
+        div#imagem img{
+            width: 100%;
+        }
+        div#botao{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            padding: 18px;
+            font: normal 2em 'Varela Round';
+            letter-spacing: 1px;
+            background-color: white;
+            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.274);
+            border-radius: 35px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1><strong>Jesus</strong> ou <strong>Sonic</strong>?</h1>
+    <div id="imagem"><img src="jesus.jpg" alt="" id="img"></div>
+    <div id="botao"><button id="bt_swt">Trocar</button></div>
+    <script>
+        var img1 = 'sonic.png'
+        var img2 = 'jesus.jpg'
+        var bt_swt = document.getElementById("bt_swt")
+        bt_swt.addEventListener('click', trocar)
+        function trocar(){
+            document.getElementById("img").src = img1
+            let aux = img1
+            img1 = img2
+            img2 = aux
+        }
+    </script>
+</body>
+</html>

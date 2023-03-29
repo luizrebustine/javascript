@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            font: normal 2em 'Arial';
+            height: 100vh;
+        }
+        #container h1{
+            font: normal 1.5em 'Arial';
+            text-align: center;
+        }
+        #input{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        #pais{
+            font: normal 1.3em 'Arial';
+            padding: 5px;
+        }
+        #submit{
+            font: normal 1em 'Arial';
+            padding: 11px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Qual País Você Mora?</h1>
+        <div id="input">
+            <input type="text" name="" id="pais">
+            <input type="submit" value="Verificar" id="submit">
+        </div>
+        <p id="res"></p>
+    </div>
+    <script>
+        var bt = document.getElementById('submit').addEventListener('click', clicar)
+        function clicar(){
+            var pais = document.getElementById('pais').value.toUpperCase()
+            let res = document.getElementById('res')
+            if (pais == 'CHINA'){
+                res.innerHTML = `<p>Você mora na ${pais}, logo você é <strong>COMUNISTA</strong> &#x262D</p>`
+            }
+            else{
+                res.innerHTML = `<p>Você mora em ${pais}, logo você é <strong>CAPITALISTA</strong> &#128184;</p>`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Valores</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        div#container{
+            display: inline-block;
+            margin-top: 100px;
+        }
+        #container h1{
+            font: normal 2em 'Arial';
+            text-align: center;
+        }
+        #container input{
+            font: normal 1.5em 'Arial';
+        }
+        #container span{
+            font: normal 1.5em 'Arial';
+            padding: 10px;
+        }
+        #container button{
+            font: normal 1.4em 'Arial';
+            padding: 3px;
+        }
+        #res{
+            font: normal 1.5em 'Arial';
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Somando Valores</h1>
+        <input type="number" name="" id="in1"><span>+</span><input type="number" name="" id="in2">
+        <button id="button">Somar</button>
+        <div id="res"></div>
+    </div>
+    <script>
+            var bt = document.getElementById('button')
+            bt.addEventListener('click', clicar)
+        function clicar() {
+            var in1 = Number(document.getElementById('in1').value)
+            var in2 = Number(document.getElementById('in2').value)
+            var soma = (in1 + in2).toFixed(2)
+            var res = document.getElementById('res')
+            res.innerText = `O resultado entre ${in1} e ${in2} é ${soma}`
+        }
+
+    </script>
+</body>
+</html>

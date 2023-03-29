@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <style>
+        body{
+            font: normal 2em 'Arial';
+            background-color: rgb(70, 70, 69);
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.568);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var real = Number(window.prompt('Digite um valor em R$: '))
+        dol = (real*5.24).toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+        eur = (real*5.65).toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})
+        document.write(`Seu valor foi convertido com sucesso, dando exatos ${dol} ou ${eur}`)
+    </script>
+</body>
+</html>

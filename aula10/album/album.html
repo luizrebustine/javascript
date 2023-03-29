@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yun Li</title>
+    <style>
+        #album{
+            margin:auto;
+            background-color: aqua;
+            width: 400px;
+            height: 400px;
+        }
+        h1{
+            font:normal 2em 'Arial';
+            text-align: center;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Passe o <strong>Mouse</strong> para saber o melhor albúm do Yun Li</h1>
+    <div id="album">
+        <img src="int.png" alt="Validation_Cover" id="img">
+    </div>
+    <script>
+        var abimg = document.getElementById('img')
+        abimg.addEventListener('mouseenter', entrar)
+        abimg.addEventListener('mouseout', sair)    
+        function entrar(){
+            abimg.src = 'validation.jpg'
+        }
+        function sair(){
+            abimg.src = 'int.png'
+        }
+    </script>
+</body>
+</html>
