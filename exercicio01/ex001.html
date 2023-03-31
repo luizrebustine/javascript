@@ -62,8 +62,8 @@
     </div>
     <script>
         var data = new Date()
-        var hora = data.getHours()
-        var min = data.getMinutes()
+        var hora = 0
+        var min = 0     
         var sem = data.getDay()
         var thora = document.getElementById('horas')
         var tsem = document.getElementById('semana')
@@ -79,7 +79,12 @@
             bgd.style.background = "#323561 url('night.gif') center center /cover no-repeat fixed"
         }
         if (min < 10){
-            thora.innerHTML = `${hora}:0${min}`
+            min = min.toString().padStart(2, '0')
+            thora.innerHTML = `${hora}:${min}`
+        }
+        if (hora <10){
+            hora = hora.toString().padStart(2, '0')
+            thora.innerHTML = `${hora}:${min}`
         }
         switch(sem){
             case 0:
