@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            position: relative;
+            height: 100vh;
+            background: url('morning.gif') center center /cover no-repeat fixed white;
+        }
+        div{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+        }
+        #horas{
+            text-align: center;
+            font: normal 7em 'Lilita One', cursive;
+            color: white;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.397);
+        }
+        #semana{
+            text-align: center;
+            font: normal 8em 'Lilita One', cursive;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        }
+        @media (max-width:1000px){
+            #horas{
+                font-size: 4em;
+            }
+            #semana{
+                font-size: 5em;
+            }
+        }
+        @media (max-width:600px){
+            #horas{
+                font-size: 13vw;
+            }
+            #semana{
+                font-size: 13vw;
+            }
+        }
+    </style>
+</head>
+<body id="body">
+    <div>
+        <h1 id="horas"></h1>
+        <h1 id="semana"></h1>
+    </div>
+    <script>
+        var data = new Date()
+        var hora = data.getHours()
+        var min = data.getMinutes()
+        var sem = data.getDay()
+        var thora = document.getElementById('horas')
+        var tsem = document.getElementById('semana')
+        var bgd = document.getElementById('body')
+        thora.innerHTML = `${hora}:${min}`
+        if (hora < 13 && hora >= 6){
+            bgd.style.background = "#F7EB85 url('morning.gif') center center /cover no-repeat fixed"
+        }
+        else if (hora < 18 && hora > 6){
+            bgd.style.background = "#FA732D url('afternoon.gif') center center /cover no-repeat fixed"
+        }
+        else{
+            bgd.style.background = "#323561 url('night.gif') center center /cover no-repeat fixed"
+        }
+        if (min < 10){
+            thora.innerHTML = `${hora}:0${min}`
+        }
+        switch(sem){
+            case 0:
+                tsem.innerHTML = 'Domingo'
+                break
+            case 1:
+                tsem.innerHTML = 'Segunda-Feira'
+                break
+            case 2:
+                tsem.innerHTML = 'Terça-Feira'
+                break
+            case 3:
+                tsem.innerHTML = 'Quarta-Feira'
+                break
+            case 4:
+                tsem.innerHTML = 'Quinta-Feira'
+                break
+            case 5:
+                tsem.innerHTML = 'Sexta-Feira'
+                break
+            case 6:
+                tsem.innerHTML = 'Sábado'
+                break
+            default:
+                tsem.innerHTML = '[ERROR]'
+                break
+        }
+    </script>
+</body>
+</html>
