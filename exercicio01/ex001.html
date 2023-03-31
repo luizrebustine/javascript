@@ -62,8 +62,8 @@
     </div>
     <script>
         var data = new Date()
-        var hora = 0
-        var min = 0     
+        var hora = data.getHours()
+        var min = data.getMinutes()
         var sem = data.getDay()
         var thora = document.getElementById('horas')
         var tsem = document.getElementById('semana')
