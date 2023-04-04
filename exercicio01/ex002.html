@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(45, 131, 211);
+        }
+        h1{
+            text-align: center;
+            font: normal 3em 'Josefin Sans', sans-serif;
+            padding: 30px;
+            color: white;
+            text-transform: uppercase;
+        }
+        #container{
+            margin: auto;
+            width: 500px;
+            height: 450px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 7px 1px rgba(0, 0, 0, 0.295);
+        }
+        #nascimento, #ano, #divsexo, #sexo{
+            font: normal 1.2em 'Lexend', sans-serif;
+            margin:10px 0px
+        }
+        #ano{
+            font-size: 1em;
+        }
+        #divsubmit{
+            display: flex;
+            justify-content: center;
+        }
+        #submit{
+            font: normal 1.2em 'Lexend', sans-serif;
+            margin: 10px 0px;
+            padding: 5px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        #imagem{
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+        #imgidade{
+            width: 100%;
+            height: 100%;
+        }
+        #res{
+            text-align: center;
+            font:normal 1.2em 'Lexend', sans-serif;
+            padding:20px
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <div id="container">
+        <div id="nascimento">
+            Ano de Nascimento:
+            <input type="number" id="ano">
+        </div>
+        <div id="divsexo">
+            Sexo:
+            <input type="radio" name="sexo" id="sexo">
+            <label for="masc">Masculino</label>
+            <input type="radio" name="sexo" id="sexo">
+            <label for="fem">Feminino</label>
+        </div>
+        <div id="divsubmit">
+            <input type="submit" value="Verificar" id="submit">
+        </div>
+        <p id="res"></p>
+        <div id="imagem">
+            <img src="" alt=" " id="imgidade">
+        </div>
+    </div>
+    <script>
+        var restext = document.getElementById('res')
+        var submit = document.getElementById('submit')
+        submit.addEventListener('click', clicar)
+        function clicar() {
+            var data = new Date()
+            var ano = data.getFullYear()
+            var idadeimg = document.getElementById('imgidade')
+            var inpt_ano = document.getElementById('ano').value
+            var res = ano - inpt_ano
+            if (inpt_ano.length == 0 || inpt_ano > ano){
+                restext.innerText = 'ERRO, NÚMERO INVÁLIDO'
+            }
+            else{
+                var sexo = document.getElementsByName('sexo')
+                var gen = ''
+                if (sexo[0].checked){
+                    gen = 'Masculino'
+                    if(res <10){
+                        idadeimg.src = 'babysteve.png'
+                    }
+                    else if(res <18){
+                        idadeimg.src = 'stevejovem.png'
+                    }
+                    else if(res <60){
+                        idadeimg.src = 'steve.png'
+                    }
+                    else{
+                        idadeimg.src = 'oldsteve.png'
+                    }
+                }
+                else if (sexo[1].checked){
+                    gen = 'Feminino'
+                    if(res < 10){
+                        idadeimg.src = 'babyalex.png'
+                    }
+                    else if(res < 18){
+                        idadeimg.src = 'alexjovem.png'
+                    }
+                    else if(res < 60){
+                        idadeimg.src = 'alex.png'
+                    }
+                    else{
+                        idadeimg.src = 'oldalex.png'
+                    }
+                }
+                restext.innerText = `${res} anos, sexo ${gen}`
+            }
+                
+        }
+
+    </script>
+</body>
+</html>
