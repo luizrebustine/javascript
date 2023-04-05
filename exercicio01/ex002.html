@@ -39,6 +39,7 @@
         }
         #ano{
             font-size: 1em;
+            width: 80px;
         }
         #divsubmit{
             display: flex;
@@ -71,17 +72,22 @@
             }
             #container{
                 width: 85vw;
-                height: 50vh;
+                height: 55vh;
                 padding: 4vw;
             }
             #nascimento, #ano, #divsexo, #sexo{
-                font-size: 4vw;
+                font-size: 4.2vw;
             }
             #ano{
-                font-size: 0.8em;
+                font-size: 1em;
             }
             #res{
                 font-size: 1.1em;
+            }
+        }
+        @media (max-width:450px){
+            #nascimento, #ano, #divsexo, #sexo{
+                font-size: 5vw;
             }
         }
     </style>
@@ -91,7 +97,7 @@
     <div id="container">
         <div id="nascimento">
             Ano de Nascimento:
-            <input type="number" id="ano">
+            <input type="number" name="" id="ano">
         </div>
         <div id="divsexo">
             Sexo:
