@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0px;
+            margin:0px;
+        }
+        body{
+            background-image: linear-gradient(-45deg, purple, rgb(190, 74, 93));
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            height: 100vh;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        form{
+            width:350px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 3px 10px 0px rgba(0, 0, 0, 0.089);
+        }
+        #divin,#divfim,#divps,#contar{
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        #inicio, #fim, #passo{
+            width: 50px;
+            line-height: 10px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #contar{
+            width: 350px;
+            border-radius: 30px;
+            background-color:rgb(190, 74, 93);
+            padding: 7px;
+            color: white;
+            font-size: 1.3em;
+            cursor:pointer;
+            border: none;
+            box-shadow: 2px 3px 2px 1px #0000002e;
+        }
+        #resultado{
+            font-size: 1.2em;
+            text-align: justify;
+            line-height: 1.5em;
+        }
+    </style>
+    <title>Contador</title>
+</head>
+<body>
+    <h1>Vamos contar</h1>
+    <form action="">
+        <div id="divin">
+            <label for="inicio">Início</label>
+            <input type="number" name="" id="inicio">
+        </div>
+        <div id="divfim">
+            <label for="fim">Fim</label>
+            <input type="number" name="" id="fim">
+        </div>
+        <div id="divps">
+            <label for="passo">Passo</label>
+            <input type="number" name="" id="passo">
+        </div>
+        <input type="button" value="Contar" id="contar">
+        <div id="resultado">
+            Preparando a contagem..
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
