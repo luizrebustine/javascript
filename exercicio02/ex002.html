@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            }
+        input[type=number]{
+            -moz-appearance: textfield;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: brown;
+            font-family: 'Alata', sans-serif;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font:bold 2.5em 'Alata', sans-serif;
+            text-shadow: 2px 3px 2px#0000002e;
+        }
+        form{
+            width: 380px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 3px 2px 1px #0000002e;
+            margin-bottom: 10px;
+        }
+        #num{
+            width: 380px;
+            padding: 10px 0px;
+            font-size: 2em;
+            text-align: center;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 1px 2px #0000003d;
+            outline: none;
+            font-family: 'Alata', sans-serif;;
+        }
+        #button{
+            width: 380px;
+            padding: 10px;
+            margin: 30px 0px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(241, 71, 71);
+            color: white;
+            font:normal 1.4em 'Alata', sans-serif;
+            box-shadow: 2px 3px 2px 1px #0000002e;
+        }
+        table{
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: auto;
+            display: none;
+            width: 380px;
+            box-shadow: 2px 3px 2px 1px #0000002e;
+        }
+        td,th{
+
+            padding: 5px;
+            text-align: center;
+        }
+        th{
+            font-weight: normal;
+            background-color: rgb(241, 71, 71);
+            color: white;
+            padding: 15px 10px;
+            font-size: 1.2em;
+        }
+        td{
+            font-size: 1.6em;
+            padding: 10px 0px;
+        }
+        @media (max-width:470px){
+            form{
+                width: 80vw;
+            }
+            #num{
+                width: 80vw;
+            }
+            #button{
+                width: 80vw;
+            }
+            table{
+                width:80vw;;
+            }
+            th{
+                padding: 2.3vw;
+                font-size: 4vw;
+            }
+            td{
+                font-size: 5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <form action="">
+        <div id="divnum">
+            <input type="number" name="" id="num">
+        </div>
+        <div>
+            <input type="button" value="Gerar Tabuada" id="button">
+        </div>
+        <div id="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Primeiro Número</th>
+                        <th>x</th>
+                        <th>Segundo Número</th>
+                        <th>=</th>
+                        <th>Resultado Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>x</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <script>
+        var btn = document.getElementById('button')
+        var table = document.getElementsByTagName('table')[0]
+        btn.addEventListener('click', clicar)
+        function clicar(){
+            table.style.display = 'block'
+            n1 = document.getElementById('num').value
+            n2 = 0
+            tab = 0
+            if (n1.length == 0){
+                alert('[ERRO] Insira um NÚMERO')
+                table.style.display = 'none'
+            }
+            else if(n1 > 99){
+                alert('[ERRO] Não é Aceito Números MAIORES que 99')
+                table.style.display = 'none'
+            }
+            else{
+                while(n2<10){
+                    n2++
+                    var res = n1*n2
+                    var tabnum1 = document.getElementsByTagName('td')[tab].innerText = n1
+                    var tabnum2 = document.getElementsByTagName('td')[tab+2].innerText = n2
+                    var tabres = document.getElementsByTagName('td')[tab+4].innerText = res
+                    tab+=5
+                }
+            }
+        }
+    </script>
+</body>
+</html>
